@@ -70,6 +70,15 @@ class ReimplementEnumerable
       result
     end
 
-
+    def drop_while
+      result = []
+      @collection.each do |element|
+        drop_book = yield(element)
+        if drop_book
+          result << element
+        end
+      end
+      result
+    end
 
 end
